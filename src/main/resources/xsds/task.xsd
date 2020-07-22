@@ -1,0 +1,27 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://www.fintech/task"
+           targetNamespace="http://www.fintech/task"
+           elementFormDefault="qualified">
+    <xs:complexType name="taskInfo">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="priority" type="xs:int"/>
+            <xs:element name="priorityName" type="xs:string"/>
+            <xs:element name="personId" type="xs:long"/>
+            <xs:element name="personName" type="xs:string"/>
+            <xs:element name="bootstrap" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="getAllTaskRequest">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="getAllTaskResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="taskInfo" type="tns:taskInfo" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
